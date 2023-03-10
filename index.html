@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 1 Task | Form</title>
+  </head>
+  <body>
+    <form action="process.php">
+      <div>
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" class="field" />
+        <br />
+        <br />
+        <label for="email">Email Address</label><br />
+        <input
+          class="field"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@gmail.com"
+        />
+        <br />
+        <br />
+        <label for="phone number">Phone Number</label><br />
+        <input
+          class="field"
+          type="number"
+          id="phone number"
+          name="phone number"
+        />
+        <br />
+        <br />
+        <label for="gender">Gender</label><br />
+        <select name="gender" id="gender">
+          <option value="">Male</option>
+          <option value="">Female</option>
+        </select>
+        <br />
+        <br />
+        <label for="password">Password</label><br />
+        <input type="password" id="password" name="password" class="field" />
+        <br />
+        <br />
+        <input class="submit" type="submit" />
+      </div>
+    </form>
+
+    <p id="success-message">
+      Thank you for contacting us. We will be in touch with you very soon.
+    </p>
+
+    <style>
+      form input {
+        border: 1px solid #c3c3c3;
+        border-radius: 3px;
+      }
+
+      .highlighted {
+        border-color: red;
+      }
+
+      #success-message {
+        display: none;
+      }
+    </style>
+
+    <script>
+      document.querySelector(".submit").addEventListener("click", function () {
+        const successMessage = document.querySelector("#success-message");
+        const fieldElements = document.getElementsByClassName("field");
+        for (const fields of fieldElements) {
+          fields.addEventListener("input", function () {
+            fields.value = ""
+              ? fields.classList.add("highlighted")
+              : fields.classList.remove("highlighted");
+          });
+          fields.value = ""
+            ? fields.classList.add("highlighted")
+            : fields.classList.remove("highlighted");
+        }
+
+        e.preventDefault();
+        successMessage.style.display = "block";
+        setTimeout(function () {
+          form.submit();
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
