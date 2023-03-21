@@ -7,6 +7,7 @@
 body {
   font-family: "Lato", sans-serif;
   line-height: 1.5;
+  background-color: black;
 }
 
 .form-style {
@@ -15,8 +16,19 @@ body {
   margin: 50px auto;
 }
 
+.form-style h3 {
+  color: white;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.form-style h3 span {
+  color: orangered;
+}
+
 .form-style label {
   font-size: 18px;
+  color: white;
 }
 
 form input {
@@ -33,6 +45,7 @@ form input {
 }
 
 .form-style .submit {
+  border: none;
   width: 100%;
   margin: 2rem auto;
   padding: 0.8rem auto;
